@@ -32,6 +32,7 @@ const processDataForm = data => {
     }
     else {
         console.log("Success");
+        
     }
 }
 
