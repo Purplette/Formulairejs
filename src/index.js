@@ -11,7 +11,7 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 
 /// custom
-const username = 'user';
+const email = 'email';
 const password = 'password';
 
 
@@ -27,12 +27,12 @@ const onLoginFormSubmit = e => {
 
 //verif login
 const processDataForm = data => {
-    if (data.get('password') !== password || data.get('username') !== username) {
+    if (data.get('password') !== password || data.get('email') !== email) {
         console.log("False")
     }
     else {
         console.log("Success");
-        
+
     }
 }
 
