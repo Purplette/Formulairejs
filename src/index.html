@@ -11,28 +11,35 @@
     
     
     <form class="boite" id="loginForm">
-        <h1>Bienvenue !</h1>
-        <div class="contenu">
-        <div class="itemformulaire">
-            <label for="email">Email</label>
-            <input required name="email" id="email" type="text">
-        </div>
-        <div  class="itemformulaire">
-            <label for="password">Mot de passe</label>
-            
-            <input required name="password" id="password" type="password"><button type="button" class="view-button"><img src="/img/eye.png"></button>
-            <a href="mdpoublie.html">Mot de passe oublié ?</a>
-        </div>
-
-        <button type="submit">
-            Connexion
-        </button>
-       <p>Pas inscrit ?<a href="inscription.html">S'inscrire</a></p> 
-
-
+        <div class="titre">
+            <h1>Bienvenue</h1>
         </div>
         
+        <div class="contenu">
+            <div class="itemformulaire">
+                <label for="email">Email</label>
+                <input required name="email" id="email" type="text">
+            </div>
+            <div  class="itemformulaire">
+                <label for="password">Mot de passe</label>
+                <div class="boitemdp">
+                    <input required name="password" id="password" type="password">
+                    <button type="button" class="view-button"><img src="/img/eye.svg"></button>
+                </div>
+                <a class="lienmdp" href="mdpoublie.html">Mot de passe oublié ?</a>
+                
+            </div>
 
+            <div class="boitesuivant">
+                <button class="suivant" type="submit">
+                    Connexion
+                    <img class="arrow" src="/img/arrow.svg">
+                </button>
+            <p class="pasinscrit">Pas inscrit ? <a href="inscription.html">S'inscrire</a></p> 
+
+            </div>
+        </div>
+    
     </form>
 
 </main>
