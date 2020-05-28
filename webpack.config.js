@@ -42,14 +42,6 @@ module.exports = {
             inject: true,
             filename: 'index.html'
         }),
-        new HTMLWebpackPLugin({
-            filename: 'mdpoublie.html',
-            template: './src/mdpoublie.html'
-        }),
-        new HTMLWebpackPLugin({
-            filename: 'inscription.html',
-            template: './src/inscription.html'
-        }),
         new MiniCssExtractPlugin({
           filename: '[name].[hash].css',
           chunkFilename: '[id].[hash].css'
