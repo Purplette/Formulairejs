@@ -1,23 +1,74 @@
 body{
-    margin:0;
     height:100vh;
-    background: linear-gradient(180deg, #29E3EF 0%, rgba(255, 255, 255, 0) 100%), #9040F7;
     display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+
+    font-family: Roboto;
+
+    background: linear-gradient(180deg, #29E3EF 0%, rgba(255, 255, 255, 0) 100%), #9040F7;
 }
 
-.boite{
-    background-color:white;
-    margin:auto;
-    padding:20px;
-    border-radius: 20px;
+a{
+    color: #29E3EF;
+}
 
+
+
+h1,h2,h3{
+    font-family: Bree Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
 }
 
 h1{
     background: #9040F7;
+    padding:20px;
     text-align: center;
-    justify-content: center;
     color: white;
+
+}
+
+label{
+    font-family: Roboto;
+    font-size: 14px;
+    color: rgb(122, 122, 122);
     
+
+}
+
+input{
+    border:none;
+    border-bottom:solid  rgb(122, 122, 122) 2px;
+    height:30px;
+}
+
+button{
+    margin-top:10px;
+    margin-bottom:10px;
+    
+}
+
+form{
+    background-color:white;
+    width: 380px;
+    height: 500px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contenu{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+
+}
+
+.itemformulaire{
+    display: flex;
+    flex-direction:column;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
