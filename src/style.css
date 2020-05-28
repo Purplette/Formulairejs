@@ -1,3 +1,22 @@
-h1 {
-    color: coral;
+body{
+    margin:0;
+    height:100vh;
+    background: linear-gradient(180deg, #29E3EF 0%, rgba(255, 255, 255, 0) 100%), #9040F7;
+    display:flex;
 }
+
+.boite{
+    background-color:white;
+    margin:auto;
+    padding:20px;
+
+}
+
+h1{
+    background: #9040F7;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    
+}
+
