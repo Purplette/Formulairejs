@@ -16,7 +16,8 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
     const retour21 = document.querySelector(".retour21")
     const suivant23 = document.querySelector(".suivant23")
     const retour32 = document.querySelector(".retour32")
-    const suivant3fin = document.querySelector(".suivant3fin")
+    const suivant34 = document.querySelector(".suivant34")
+    const retour43 = document.querySelector(".retour43")
 
     // Button listener etape 1
     suivant12.addEventListener("click", (e)=> {
@@ -38,12 +39,29 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
         e.preventDefault()
     });
 
-    // Button listener etape 2
+    // Button listener etape 23    
     retour32.addEventListener("click", (e)=> {
         document.querySelector('#InscriptionForm3').classList.remove("form-active");
         document.querySelector('#InscriptionForm2').classList.add("form-active");
         e.preventDefault()
     });
+
+    suivant34.addEventListener("click", (e)=> {
+        document.querySelector('#InscriptionForm3').classList.remove("form-active");
+        document.querySelector('#InscriptionForm4').classList.add("form-active");
+        
+    });
+
+    //button listener etape 4
+    retour43.addEventListener("click", (e)=> {
+        document.querySelector('#InscriptionForm4').classList.remove("form-active");
+        document.querySelector('#InscriptionForm3').classList.add("form-active");
+        e.preventDefault()
+    });
+
+   
+
+
 
 
 
@@ -85,25 +103,27 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 // }
 
 
-//view password
-// document.querySelectorAll('.view-button').forEach((obj)=>{
-//     obj.addEventListener('mousedown',()=>{
-//         changePasswordView(obj);
-//     });
-//     obj.addEventListener('mouseup',()=>{
-//         changePasswordView(obj);
-//     });
-// });
+//Voir mot de passe
+var mdp = document.querySelector('#mdp'); 
+var obj = document.querySelector(".view-button")
+document.querySelectorAll('.view-button').forEach((obj)=>{
+    obj.addEventListener('mousedown',()=>{
+        changePasswordView(obj);
+    });
+    obj.addEventListener('mouseup',()=>{
+        changePasswordView(obj);
+    });
+});
 
-// const changePasswordView = obj => {
-//     let type = obj.previousElementSibling.getAttribute("type");
-//     switch (type) {
-//         case "password" :
-//             obj.previousElementSibling.setAttribute("type", "text");
-//             break;
-//         case "text" :
-//             obj.previousElementSibling.setAttribute("type", "password");
-//             break;
-//     }
-//  }
+const changePasswordView = obj => {
+    let type = mdp.getAttribute("type");
+    switch (type) {
+        case "password" :
+            mdp.setAttribute("type", "text");
+            break;
+        case "text" :
+            mdp.setAttribute("type", "password");
+            break;
+    }
+ }
  
