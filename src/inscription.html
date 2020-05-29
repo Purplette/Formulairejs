@@ -20,20 +20,20 @@
         <div class="contenu">
             <h2>Identité :</h2>
             <div class="itemformulaire">
-                <label>Nom</label>
+                <label>Nom *</label>
                 <input required name="nom" class="nom" type="text" patern="[a-zA-ZÀ-ÿ]">
             </div>
             <div class="itemformulaire">
-                <label>Prénom</label>
+                <label>Prénom *</label>
                 <input required name="prenom" class="prenom" type="text" patern="[a-zA-ZÀ-ÿ]">
             </div>
             <div class="itemformulaire">
                 <label>Date de naissance</label>
-                <input required name="date" class="date" type="date">
+                <input name="date" class="date" type="date">
             </div>
             <div class="itemformulaire">
                 <label>Courte description</label>
-                <input type="text" id="description" name="description" required  size="400">
+                <input type="text" id="description" name="description" size="400">
             </div>
            
 
@@ -59,15 +59,15 @@
         <div class="contenu">
             <h2>Coordonnées :</h2>
             <div class="itemformulaire">
-                <label>Adresse</label>
+                <label>Adresse *</label>
                 <input required name="adresse" class="adresse" type="text" >
             </div>
             <div class="itemformulaire">
-                <label>Code postal</label>
+                <label>Code postal *</label>
                 <input required name="codepostal" class="codepostal" type="text" minlength="5" maxlength="5" pattern="[0-9]{5}">
             </div>
             <div class="itemformulaire">
-                <label for="ville">Ville</label>
+                <label for="ville">Ville *</label>
                 <input required name="ville" class="ville" type="text" patern="[a-zA-ZÀ-ÿ]">
             </div>
            
@@ -94,11 +94,11 @@
         <div class="contenu">
             <h2>Informations de connexion :</h2>
             <div class="itemformulaire">
-                <label>Email</label>
+                <label>Email *</label>
                 <input required name="email" class="email" type="text" pattern="[^@\s]+@[^@\s]+">
             </div>
             <div class="itemformulaire">
-                <label>Mot de passe</label>
+                <label>Mot de passe *</label>
                 <div class="boitemdp">
                     <input required name="mdp" id="mdp" type="password">
                 </div>
