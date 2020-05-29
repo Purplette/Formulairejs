@@ -59,7 +59,6 @@ h1{
 form{
     background-color:white;
     width: 380px;
-    padding-bottom:20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -82,14 +81,21 @@ label{
     font-family: Roboto;
     font-size: 14px;
     color: rgb(122, 122, 122);
-    
-
+    margin-bottom:5px;
 }
 
 input{
     border:none;
     border-bottom:solid  rgb(122, 122, 122) 2px;
     height:30px;
+    width:100%;
+}
+
+textarea {
+    outline: none;
+    border:solid  rgb(122, 122, 122) 1px;
+    border-bottom:solid  rgb(122, 122, 122) 2px;
+
 }
 
 .itemformulaire{
@@ -104,15 +110,11 @@ input{
     border:none;
     float:right;
     width:40px;
-    
-   
-}
-.boitemdp{
-    display:flex;
+
 }
 
-[type=password]{
-    width:100%;
+.boitemdp{
+    display:flex;
 }
 
 .lienmdp{

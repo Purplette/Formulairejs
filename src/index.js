@@ -17,11 +17,21 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 //Fonctionnement page de Connexion
 
     //Verifications login
-    
-    document.querySelector('#loginForm').addEventListener('submit',onLoginFormSubmit);
-    
+
     const email = 'eva.haberthur@gmail.com';
     const password = '0000';
+
+    document.querySelector('#loginForm').addEventListener('submit',(e)=>{
+        e.preventDefault(); // Annule l'action par défaut
+
+        setTimeout(() => {
+            // Récupère les données du formulaire
+            const data = new FormData(e.target);
+            const response = processDataForm(data);
+        }, 1000); // 1 seconde
+    });
+
+  
 
     const processDataForm = data => {
         if (data.get('password') !== password || data.get('email') !== email) {
@@ -33,22 +43,13 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
         }
     }
 
-    
-
-    const onLoginFormSubmit = e => {
-        e.preventDefault(); // Annule l'action par défaut
-
-        setTimeout(() => {
-            // Récupère les données du formulaire
-            const data = new FormData(e.target);
-            const response = processDataForm(data);
-        }, 1000); // 1 seconde
-    }
 
 
 
 
 //Fonctionnement page Inscription
+
+// document.querySelector('.pasinscrit').addEventListener('click',()=>{
 
     //Apparation des parties
     const suivant12 = document.querySelector(".suivant12")
@@ -98,6 +99,9 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
         e.preventDefault()
     });
 
+   
+// });
+    
  
    
 
