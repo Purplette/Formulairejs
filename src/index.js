@@ -83,7 +83,6 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 //Fonctionnement page Inscription
 
-// document.querySelector('.pasinscrit').addEventListener('click',()=>{
 
     //Apparation des parties
     const suivant12 = document.querySelector(".suivant12")
@@ -133,8 +132,7 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
         e.preventDefault()
     });
 
-   
-// });
+
     
  
    
