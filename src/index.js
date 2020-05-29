@@ -43,6 +43,40 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
         }
     }
 
+    
+    //Afficher mot de passe
+        const changePasswordView = obj => {
+            let mdptype=document.querySelector(".password");
+            console.log(mdptype);
+            let type = mdptype.getAttribute("type");
+            switch (type) {
+                case "password" :
+                mdptype.setAttribute("type", "text");
+                break;
+            case "text" :
+                mdptype.setAttribute("type", "password");
+                break;
+        }
+        }
+
+      
+        document.querySelectorAll('.view-button').forEach((obj)=>{
+            obj.addEventListener('mousedown',()=>{
+                changePasswordView(obj);
+            });
+            obj.addEventListener('mouseup',()=>{
+                changePasswordView(obj);
+            });
+
+            // for touchable screens
+            obj.addEventListener('touchstart',()=>{
+                changePasswordView(obj);
+            }, { passive: true } );
+            obj.addEventListener('touchend',()=>{
+                changePasswordView(obj);
+            }, { passive: true } );
+        });
+
 
 
 
@@ -104,42 +138,3 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
     
  
    
-
-
-
-
-
-
-//view password
-
-///////////////////////
-//events événements
-
-//submit
-
-
-
-//Voir mot de passe
-// var mdp = document.querySelector('#mdp'); 
-// var obj = document.querySelector(".view-button")
-// document.querySelectorAll('.view-button').forEach((obj)=>{
-//     obj.addEventListener('mousedown',()=>{
-//         changePasswordView(obj);
-//     });
-//     obj.addEventListener('mouseup',()=>{
-//         changePasswordView(obj);
-//     });
-// });
-
-// const changePasswordView = obj => {
-//     let type = mdp.getAttribute("type");
-//     switch (type) {
-//         case "password" :
-//             mdp.setAttribute("type", "text");
-//             break;
-//         case "text" :
-//             mdp.setAttribute("type", "password");
-//             break;
-//     }
-//  }
- 
