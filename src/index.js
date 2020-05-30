@@ -1,7 +1,7 @@
-//import style
+//Importation style scss
 import './global';
 
-//import all images
+//Importation image
 function importAll(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
