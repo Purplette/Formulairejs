@@ -7,8 +7,11 @@ function importAll(r) {
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
     return images;
 }
+
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
+const email = 'eva.haberthur@gmail.com';
+const password = '0000';
 
 
 //Fonctionnement page Inscription
@@ -66,46 +69,51 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
         //Verifications login
 
-        const email = 'eva.haberthur@gmail.com';
-        const password = '0000';
+        document.querySelectorAll('form').forEach((obj)=>{
+            obj.addEventListener('submit',onFormSubmit);
+        });
 
-        document.querySelector('#loginForm').addEventListener('submit',(e)=>{
+        const onFormSubmit = e => {
             e.preventDefault(); // Annule l'action par défaut
-
+        
+            let id = e.target.id;
+        
+        
             setTimeout(() => {
                 // Récupère les données du formulaire
                 const data = new FormData(e.target);
-                const response = processDataForm(data);
-            }, 1000); // 1 seconde
-        });
+                const response = processDataForm(data, id);
+            }, loadtime); // 1 seconde
+        }
 
-    
+        const processDataForm = (data, id) => {
 
-        const processDataForm = data => {
-            if (data.get('password') !== password || data.get('email') !== email) {
-                console.log("False")
-            }
-            else {
-                console.log("Success");
+            //traitement indépendant des champs
+            switch (id) {
+                case 'loginForm':
+                    if (data.get('password') !== password || data.get('username') !== username) {
+                        alert.innerHTML = "<span>Wrong username or password</span>";
+                    }
 
+                    break;
             }
         }
 
     
         //Afficher mot de passe
             const changePasswordView = obj => {
-                let mdptype=document.querySelector(".password");
-                console.log(mdptype);
-                let type = mdptype.getAttribute("type");
-                switch (type) {
-                    case "password" :
-                    mdptype.setAttribute("type", "text");
+                let el = obj.previousElementSibling;
+            let type = el.getAttribute("type");
+            switch (type) {
+                case "password" :
+                    el.setAttribute("type", "text");
                     break;
                 case "text" :
-                    mdptype.setAttribute("type", "password");
+                    el.setAttribute("type", "password");
                     break;
             }
             }
+        
 
         
             document.querySelectorAll('.view-button').forEach((obj)=>{
@@ -115,8 +123,16 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
                 obj.addEventListener('mouseup',()=>{
                     changePasswordView(obj);
                 });
+                obj.addEventListener('touchstart',()=>{
+                    changePasswordView(obj);
+                }, { passive: true } );
+                obj.addEventListener('touchend',()=>{
+                    changePasswordView(obj);
+                }, { passive: true } );
 
             });
+
+            
     
  
    
