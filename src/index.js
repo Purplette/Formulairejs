@@ -11,76 +11,6 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 
 
-
-
-
-//Fonctionnement page de Connexion
-
-    //Verifications login
-
-    const email = 'eva.haberthur@gmail.com';
-    const password = '0000';
-
-    document.querySelector('#loginForm').addEventListener('submit',(e)=>{
-        e.preventDefault(); // Annule l'action par défaut
-
-        setTimeout(() => {
-            // Récupère les données du formulaire
-            const data = new FormData(e.target);
-            const response = processDataForm(data);
-        }, 1000); // 1 seconde
-    });
-
-  
-
-    const processDataForm = data => {
-        if (data.get('password') !== password || data.get('email') !== email) {
-            console.log("False")
-        }
-        else {
-            console.log("Success");
-
-        }
-    }
-
-    
-    //Afficher mot de passe
-        const changePasswordView = obj => {
-            let mdptype=document.querySelector(".password");
-            console.log(mdptype);
-            let type = mdptype.getAttribute("type");
-            switch (type) {
-                case "password" :
-                mdptype.setAttribute("type", "text");
-                break;
-            case "text" :
-                mdptype.setAttribute("type", "password");
-                break;
-        }
-        }
-
-      
-        document.querySelectorAll('.view-button').forEach((obj)=>{
-            obj.addEventListener('mousedown',()=>{
-                changePasswordView(obj);
-            });
-            obj.addEventListener('mouseup',()=>{
-                changePasswordView(obj);
-            });
-
-            // for touchable screens
-            obj.addEventListener('touchstart',()=>{
-                changePasswordView(obj);
-            }, { passive: true } );
-            obj.addEventListener('touchend',()=>{
-                changePasswordView(obj);
-            }, { passive: true } );
-        });
-
-
-
-
-
 //Fonctionnement page Inscription
 
 
@@ -132,7 +62,61 @@ const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
         e.preventDefault()
     });
 
+    //Fonctionnement page de Connexion
 
+        //Verifications login
+
+        const email = 'eva.haberthur@gmail.com';
+        const password = '0000';
+
+        document.querySelector('#loginForm').addEventListener('submit',(e)=>{
+            e.preventDefault(); // Annule l'action par défaut
+
+            setTimeout(() => {
+                // Récupère les données du formulaire
+                const data = new FormData(e.target);
+                const response = processDataForm(data);
+            }, 1000); // 1 seconde
+        });
+
+    
+
+        const processDataForm = data => {
+            if (data.get('password') !== password || data.get('email') !== email) {
+                console.log("False")
+            }
+            else {
+                console.log("Success");
+
+            }
+        }
+
+    
+        //Afficher mot de passe
+            const changePasswordView = obj => {
+                let mdptype=document.querySelector(".password");
+                console.log(mdptype);
+                let type = mdptype.getAttribute("type");
+                switch (type) {
+                    case "password" :
+                    mdptype.setAttribute("type", "text");
+                    break;
+                case "text" :
+                    mdptype.setAttribute("type", "password");
+                    break;
+            }
+            }
+
+        
+            document.querySelectorAll('.view-button').forEach((obj)=>{
+                obj.addEventListener('mousedown',()=>{
+                    changePasswordView(obj);
+                });
+                obj.addEventListener('mouseup',()=>{
+                    changePasswordView(obj);
+                });
+
+            });
     
  
    
