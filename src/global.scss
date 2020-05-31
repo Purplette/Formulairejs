@@ -1,3 +1,7 @@
+$purple:#9040F7;
+$blue:#29E3EF;
+$message:#F5014D;
+
 body{
     
     display:flex;
@@ -7,11 +11,52 @@ body{
     height:100vh;
     font-family: Roboto;
 
-    background: linear-gradient(180deg, #29E3EF 0%, rgba(255, 255, 255, 0) 100%), #9040F7;
+    background: linear-gradient(180deg, $blue 0%, rgba(255, 255, 255, 0) 100%), $purple;
 }
 
+.message {
+
+    font-size: 20px;
+    font-weight: 400;
+    font-family: Bree Serif;
+    letter-spacing:5px;
+
+    padding: 15px;
+    color: #fff;
+
+    transform: translateY(-100%);
+    position: absolute;
+    transition: 0.2s;
+    top: 0;
+    left: 0;
+    right:0;
+    opacity: 0;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.faux {
+      background-color:$message;
+    }
+
+    &.updown{
+        animation:updownanim 5s;
+        opacity: 1;
+    }
+  }
+
+    @keyframes updownanim{
+        0%{transform: translateY(-100%);};
+        35%{transform: translateY(0);};
+        60%{transform: translateY(0);};
+        100%{transform: translateY(-100%);};
+
+    }
+
 a{
-    color: #29E3EF;
+    color: $blue;
 }
 
 
@@ -24,27 +69,28 @@ h1,h2,h3{
 }
 
 h2{
-    color:#9040F7;
+    color:$purple;
+
+    &.fini{
+        text-align:center;
+    color: $blue;
+
+    }
 }
 
-h2.fini{
-    text-align:center;
-    color: #29E3EF;
-}
+
 
 .titre{
-    background: #9040F7;
+    background: $purple;
     padding:20px;
     display:flex;
     align-items: center;
 
+    >a{
+        position:absolute;
+        transform: rotate(180deg);
+    }
 }
-
-.titre > a {
-   position:absolute;
-   transform: rotate(180deg);
-}
-
 
 
 h1{
@@ -78,7 +124,7 @@ form{
 }
 
 label{
-    font-family: Roboto;
+    
     font-size: 14px;
     color: rgb(122, 122, 122);
     margin-bottom:5px;
@@ -138,7 +184,7 @@ textarea {
 }
 
 .suivant{
-    background-color: #9040F7 ;
+    background-color: $purple ;
     color:white;
     font-family: Bree Serif;
     font-size:17px;

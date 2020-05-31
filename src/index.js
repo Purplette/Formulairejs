@@ -11,6 +11,7 @@ function importAll(r) {
 //Déclaration des constantes
     //Générales
     const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+    const message = document.querySelector(".message");
 
     //Verification informations de connexion
     const email = 'eva.haberthur@gmail.com';
@@ -48,7 +49,11 @@ function importAll(r) {
             switch (id) {
                 case 'loginForm':
                     if (data.get('password') !== password || data.get('email') !== email) {
-                        alert.innerHTML = "<span>Wrong username or password</span>";
+                        message.innerHTML = "<span>Mauvais email ou Mauvais mot de passe </span>";
+                        message.classList.add("updown","faux");
+                    }
+                    else{
+                        message.classList.remove("updown","faux");
                     }
                    
                     break;
@@ -73,6 +78,13 @@ function importAll(r) {
                         document.querySelector('#InscriptionForm4').classList.add("form-active");
 
                     break;
+
+                    case 'mdpForm':
+                    
+                        message.innerHTML = "<span>Email envoyé avec succès </span>";
+                        message.classList.add("updown","faux");
+                   
+                  
             }
         }
 
